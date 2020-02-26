@@ -2,25 +2,25 @@
   "dogs": [
     {
       "id": 1,
-      "name": "Teddy1",
-      "breed": "chihuaha",
-      "sex": "female"
+      "name": "Baby",
+      "breed": "Irish Spaniel",
+      "sex": "male"
     },
     {
       "id": 2,
-      "name": "cesar",
+      "name": "cesar134",
       "breed": "Scottish Deerhound",
       "sex": "male"
     },
     {
       "id": 3,
-      "name": "Lucy",
-      "breed": "Scottish Deerhound",
-      "sex": "female"
+      "name": "Teddy",
+      "breed": "chihuaha",
+      "sex": "male"
     },
     {
       "id": 4,
-      "name": "cesar",
+      "name": "Patrick",
       "breed": "Scottish Deerhound",
       "sex": "male"
     },

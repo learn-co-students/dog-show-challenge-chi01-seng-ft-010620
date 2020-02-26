@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  fetchDogs();
-  editButton();
-});
+const table = document.querySelector('table').children[1];
+// document.addEventListener('DOMContentLoaded', () => {
+//  
+// }); 
+fetchDogs();
+ editButton();
 
 ////////// dogs rendering ///////
 function fetchDogs() {
@@ -15,7 +17,7 @@ function fetchDogs() {
 }
 
 function renderDogs(data) {
-  const table = document.querySelector('table').children[1];
+  
   let returnString = '';
   data.forEach(dog => {
     const td = `<tr>
@@ -74,11 +76,11 @@ function editSubmit(tableRow) {
         "Accept": 'application/json'
       },
       body: JSON.stringify(bodyData)
-    }).then(resp => fetchDogs())   
-    event.target.reset()  
-    //.then(resp =>resp.json())
+    })//.then(resp => fetchDogs())   
+    // event.target.reset()  
+    .then(resp =>resp.json())
     //.then(data => console.log(data)) 
-    // .then(data => renderNewUpdate(data))
+    .then(data => renderNewUpdate(data))
 })
 }
    
@@ -88,20 +90,25 @@ function editSubmit(tableRow) {
 //   dogID = ""
 
 
-// function renderNewUpdate(data){
-   
-//     const dogRow = document.querySelectorAll(`td`)
-//     dogRow.forEach( tableRow =>{
-//         if(tableRow.dataset.id === `${data.id}`){
-//             console.log(tableRow)
-//             console.log(data)
-//             tableRow.innerHTML = ''
-//             tableRow.innerHTML= `<td data-id = "${data.id}" style="text-align:center">${data.name}</td>`
-//             // tableRow.value= `${data.breed}`
-//             // tableRow.sex.innerHTML =`<td style="text-align:center">${data.sex}</td>`
-//         }
+function renderNewUpdate(data){
+//    debugger
+    // const dogRow = document.querySelectorAll(`td`)
+    var rowData = document.querySelector(`[data-id='${data.id}']`).parentElement
+    rowData.children[0].innerHTML = data.name
+    rowData.children[1].innerHTML = data.breed
+ rowData.children[2].innerHTML = data.sex
+} 
+   // dogRow.forEach( tableRow =>{
+    //     if(tableRow.dataset.id === `${data.id}`){
+    //         console.log(tableRow)
+    //         console.log(data)
+    //         tableRow.innerHTML = ''
+    //         tableRow.innerHTML= `<td data-id = "${data.id}" style="text-align:center">${data.name}</td>`
+            // tableRow.value= `${data.breed}`
+            // tableRow.sex.innerHTML =`<td style="text-align:center">${data.sex}</td>`
+        
             // tableRow.innerHTML = ''
             // tableRow.name.innerHTML = `<td data-id = "${data.id}" style="text-align:center">${data.name}</td>`
             // tableRow.breed.innerHTML= `<td style="text-align:center">${data.breed}</td>`
-            // tableRow.sex.innerHTML =`<td style="text-align:center">${data.sex}</td>`
-        
+            // tableRow.sex.innerHTML =`<td style="text-align:center">${data.sex}</td>`    
+       
